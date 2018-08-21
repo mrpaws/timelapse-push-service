@@ -25,4 +25,6 @@ VOLUME ${APPDIR}/env-config.sh
 # optional volume mount
 VOLUME $DATADIR
 
+ADD  ./docker/fs/srv/tlps/app/entry.sh $APPDIR/entry.sh
+
 ENTRYPOINT "/bin/bash"

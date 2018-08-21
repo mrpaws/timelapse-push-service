@@ -93,9 +93,9 @@ function configure_mc {
 
   rm ${testfile}
     if [ $? -eq 0 ]; then
-    echo "GOOD: local file removal success (${S3_COMPAT_ENDPOINT})."
+    echo "GOOD: local file removal success (${DATADIR})."
   else
-    echo "ERROR: local file removal failure (${S3_COMPAT_ENDPOINT})."
+    echo "ERROR: local file removal failure (${DATADIR})."
     exit 6
   fi
 
