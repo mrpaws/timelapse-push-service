@@ -1,2 +1,11 @@
 # timelapse-push-service
-DSLR Timelapse automation with gphoto2 and object storage push to fs or any provider via s3proxy (Built for use with Original Raspberry Pi, but should work on any linux distro)
+DSLR Timelapse automation with gphoto2 and object storage push to any s3-compatible provider (Built for use with Original Raspberry Pi
+
+
+## Usage
+
+## Todo
+- Get s3proxy sidecar working to accommodate more backends
+- Add volume support for local fs dumping
+
+
