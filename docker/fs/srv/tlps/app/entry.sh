@@ -47,6 +47,10 @@ function check_environment {
   fi
 }
 
+function install_cron {
+
+
+}
 
 function configure_mc {
   echo "INFO: Configuring and testing object storage..."
@@ -71,7 +75,7 @@ function configure_mc {
     exit 4
   fi
 
-  testfile=${DATADIR}/${TIMELAPSE_PREFIX}_pushtest.txt
+  testfile="${DATADIR}/${TIMELAPSE_PREFIX}pushtest.txt"
 
   # create file in datadir (test in case mounted)
   touch  ${testfile}
@@ -111,9 +115,5 @@ APPDIR="/srv/tlps/app"
 read_environment_config
 configure_timezone 
 check_environment && configure_mc
-
-
-
-
 
 echo "$1" | crontab - && crond -f -L -
