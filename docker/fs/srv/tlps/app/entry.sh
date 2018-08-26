@@ -25,7 +25,10 @@ function check_environment {
     'S3_COMPAT_SECRET_KEY'      \
     'S3_COMPAT_API_VERSION'     \
     'S3_COMPAT_BUCKET_NAME'     \
-    'TIMELAPSE_PREFIX'
+    'TIMELAPSE_PREFIX'          \
+    'TRIGGER_FREQUENCY_CRON'    \
+    'PRESERVE_LOCAL_FILES'      \
+    'TIMEZONE'                  
     do 
       if [ -z "${!y+x}" -o -z "${!y}" ]; then 
         echo "ERROR: ${y} is not set or zero length.";
@@ -47,9 +50,10 @@ function check_environment {
   fi
 }
 
-function install_cron {
-
-
+function install_crontab {
+  TRIGGER_FREQUENCY_CRON=${TRIGGER_FREQUENCY_CRON:-"*/5 * * * *"}
+  echo "Installing crontab... (${TRIGGER_FREQUENCY_CRON})"
+  echo "${TRIGGER_FREQUENCY_CRON} /srv/tlps/app/tlps.sh" | crontab -
 }
 
 function configure_mc {
@@ -115,5 +119,6 @@ APPDIR="/srv/tlps/app"
 read_environment_config
 configure_timezone 
 check_environment && configure_mc
+install_crontab
 
-echo "$1" | crontab - && crond -f -L -
+crond -f -L -

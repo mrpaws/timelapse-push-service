@@ -9,5 +9,8 @@ export S3_COMPAT_API_VERSION='S3v4'
 export S3_COMPAT_BUCKET_NAME='my-timelapse'
 
 # timelapse app
+export TRIGGER_FREQUENCY_CRON="*/5 * * * *"
+export PRESERVE_LOCAL_FILES="yes"
 export TIMELAPSE_PREFIX="tl"
 export TIMEZONE="America/Los_Angeles"
+export GPHOTO2_CLI_CONFIG_OPTIONS=""

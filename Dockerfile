@@ -26,6 +26,6 @@ VOLUME ${APPDIR}/env-config.sh
 VOLUME $DATADIR
 
 ADD  ./docker/fs/srv/tlps/app/entry.sh $APPDIR/entry.sh
-ADD  ./docker/fs/srv/tlps/app/shoot.sh $APPDIR/shoot.sh
+ADD  ./docker/fs/srv/tlps/app/tlps.sh $APPDIR/tlps.sh
 
 ENTRYPOINT "/bin/bash"
