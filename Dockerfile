@@ -28,4 +28,4 @@ VOLUME $DATADIR
 ADD  ./docker/fs/srv/tlps/app/entry.sh $APPDIR/entry.sh
 ADD  ./docker/fs/srv/tlps/app/tlps.sh $APPDIR/tlps.sh
 
-ENTRYPOINT "/bin/bash"
+ENTRYPOINT "/srv/tlps/app/entry.sh"
