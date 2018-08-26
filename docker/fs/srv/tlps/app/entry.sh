@@ -1,7 +1,7 @@
 #!/bin/bash
 # entry.sh - timelapse-push-service entrypoint script
 
-set -ex
+set -e
 
 function read_environment_config {
   . /srv/tlps/app/env-config.sh || echo "WARN: No env-config.sh detected"
