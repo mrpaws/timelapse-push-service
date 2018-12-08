@@ -71,7 +71,7 @@ function configure_mc {
   fi
 
   # list remote bucket
-  mc ls timelapse/${S3_COMPAT_BUCKET_NAME}
+  mc ls timelapse/${S3_COMPAT_BUCKET_NAME} > /dev/null 2>&1
   if [ $? -eq 0 ]; then
     echo "GOOD: mc remote bucket read test success."
   else
