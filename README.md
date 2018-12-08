@@ -85,6 +85,6 @@ The configuration parameters below will take 2 shots every 30 seconds when the c
 ## Todo
 - Get s3proxy sidecar working to accommodate more backends
 - Enhance security around credentials file
-- Make the push routine
-- Better modularize
+- Better modularize code
 - Rebuild repo with a simple install script for non-docker implementations
+- Add k8s deployment
